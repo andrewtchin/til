@@ -35,3 +35,9 @@ ntp.get
 timesync.set --mode NTP
 timesyc.get
 ```
+
+### Status
+```
+service-control --list
+service-control --status
+```
