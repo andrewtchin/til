@@ -39,6 +39,13 @@ Set `/etc/systemd/system/systemd-networkd.service.d/10-debug.conf`
 [Service]
 Environment=SYSTEMD_LOG_LEVEL=debug
 ```
+### Analyze
+
+```
+systemd-analyze
+systemd-analyze critical-chain
+systemd-analyze blame
+```
 
 ### Generate systemd graph
 ```
