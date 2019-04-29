@@ -56,6 +56,12 @@ Add mount to `/etc/fstab`
 nfs.example.com:/widgets    /build/widgets    nfs    auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
 ```
 
+```
+sudo mkdir -p /build/widgets
+sudo mount -a
+df -h
+```
+
 Add volume to `/etc/gitlab-runner/config.toml`
 ```bash
 volumes = ["/cache", "/build/widgets:/build/widgets:ro"]
