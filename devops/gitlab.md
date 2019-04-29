@@ -76,3 +76,6 @@ Put `runner-cleanup.sh` in `/etc/cron.weekly`
 /usr/share/gitlab-runner/clear-docker-cache
 docker rmi $(docker images -a --filter=dangling=true -q)
 ```
+```
+chmod 0755 runner-cleanup.sh
+```
