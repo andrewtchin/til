@@ -60,6 +60,11 @@ Add volume to `/etc/gitlab-runner/config.toml`
 ```bash
 volumes = ["/cache", "/build/widgets:/build/widgets:ro"]
 ```
+
+```bash
+sudo gitlab-runner restart
+```
+
 ## Periodic Cleanup
 
 Put this script in `/etc/cron.weekly`
