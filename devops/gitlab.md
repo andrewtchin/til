@@ -67,7 +67,7 @@ sudo gitlab-runner restart
 
 ## Periodic Cleanup
 
-Put this script in `/etc/cron.weekly`
+Put `runner-cleanup.sh` in `/etc/cron.weekly`
 
 ```bash
 #!/bin/sh
