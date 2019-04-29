@@ -45,3 +45,29 @@ Unregister runner
 ```
 sudo gitlab-runner unregister -n gitlab-runner-1
 ```
+
+## NFS Mount
+```bash
+sudo apt-get install nfs-common
+```
+
+Add mount to `/etc/fstab`
+```bash
+nfs.example.com:/widgets    /build/widgets    nfs    auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+```
+
+Add volume to `/etc/gitlab-runner/config.toml`
+```bash
+volumes = ["/cache", "/build/widgets:/build/widgets:ro"]
+```
+## Periodic Cleanup
+
+Put this script in `/etc/cron.weekly`
+
+```bash
+#!/bin/sh
+
+# https://gitlab.com/gitlab-org/gitlab-runner/issues/2980
+/usr/share/gitlab-runner/clear-docker-cache
+docker rmi $(docker images -a --filter=dangling=true -q)
+```
