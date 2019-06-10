@@ -54,3 +54,9 @@ openssl req \
 ```
 openssl req -in server.csr.pem -noout -text
 ```
+
+### Symmetric Encryption
+```
+openssl aes-256-cbc -e -in data.tar.gz -out data.tar.gz.enc
+openssl aes-256-cbc -d -in data.tar.gz.enc -out data.tar.gz
+```
