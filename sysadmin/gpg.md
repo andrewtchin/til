@@ -19,3 +19,10 @@ gpg \
 
 gpg --output un_encrypted.data --decrypt encrypted.data
 ```
+
+### Asymmetric encryption
+```
+echo "blah" | gpg --encrypt --armor --recipient "test@example.com" --no-version
+gpg --output data.tar.gz.gpg --encrypt --armor --recipient "test@example.com" data.tar.gz
+gpg --output file --decrypt data.tar.gz.gpg
+```
