@@ -62,3 +62,11 @@ echo "blah" | openssl enc -aes-256-cbc -e -a
 openssl aes-256-cbc -e -in data.tar.gz -out data.tar.gz.enc
 openssl aes-256-cbc -d -in data.tar.gz.enc -out data.tar.gz
 ```
+
+### Generate DH param
+
+http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_dhparam
+
+```
+openssl dhparam -out dhparam.pem 2048
+```
