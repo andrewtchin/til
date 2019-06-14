@@ -70,3 +70,9 @@ http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_dhparam
 ```
 openssl dhparam -out dhparam.pem 2048
 ```
+
+### Show CAs in root store
+```
+awk -v cmd='openssl x509 -noout -subject' '
+    /BEGIN/{close(cmd)};{print | cmd}' < /etc/ssl/certs/ca-certificates.crt
+```
