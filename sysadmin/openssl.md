@@ -55,6 +55,37 @@ openssl req \
 openssl req -in server.csr.pem -noout -text
 ```
 
+### Generate CSR with SAN
+
+```
+cat > csr_details.txt <<-EOF
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+req_extensions = req_ext
+distinguished_name = dn
+
+[ dn ]
+C=US
+ST=New York
+L=Rochester
+O=End Point
+OU=Testing Domain
+emailAddress=your-administrative-address@your-awesome-existing-domain.com
+CN = www.your-new-domain.com
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = your-new-domain.com
+DNS.2 = www.your-new-domain.com
+EOF
+
+openssl req -new -sha256 -nodes -out \*.your-new-domain.com.csr -newkey rsa:2048 -keyout \*.your-new-domain.com.key -config <( cat csr_details.txt )
+```
+
 ### Symmetric Encryption
 ```
 echo "blah" | openssl enc -aes-256-cbc -e -a
