@@ -31,6 +31,11 @@ cut -d: -f1 /etc/passwd
 groups
 ```
 
+### Show a user's groups
+```
+groups <username>
+```
+
 ### Show user info
 ```
 id <username>
