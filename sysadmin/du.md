@@ -16,4 +16,6 @@ Options:
 du -a /home | sort -n -r | head -n 5
 or
 du -a / | sort -n -r | head -n 5
+or
+du -Sh / | sort -rh | head -50
 ```
