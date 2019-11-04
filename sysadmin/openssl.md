@@ -10,6 +10,7 @@ openssl x509 -in cert.pem -text -noout
 
 ```
 openssl s_client -showcerts -connect <IP>:<port>
+openssl s_client -connect <fqdn>:<port>
 ```
 
 ### Get fingerprint of remote server
