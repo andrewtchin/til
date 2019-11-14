@@ -35,3 +35,8 @@ gqG
 ```
 :set et|retab
 ```
+
+### Delete every other line
+```
+:g/^/+d
+```
