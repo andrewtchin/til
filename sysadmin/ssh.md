@@ -23,3 +23,9 @@ ssh-keygen -y -f key.pem > key.pub
 ```
 eval `ssh-agent`
 ```
+
+### Local forwarding
+
+```
+ssh -L 8080:localhost:8080 user@1.2.3.4
+```
