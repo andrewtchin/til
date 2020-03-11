@@ -5,3 +5,9 @@
 ```
 awk -i inplace '{gsub(/\\n/,RS)}1' file.txt
 ```
+
+### Print column
+
+```
+awk '{print $1}'
+```
