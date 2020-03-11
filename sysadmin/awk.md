@@ -1,7 +1,7 @@
 # awk
 
-### Replace literal \n with newline
+### Replace literal \n with newline (update in place)
 
 ```
-awk '{gsub(/\\n/,RS)}1' file.txt
+awk -i inplace '{gsub(/\\n/,RS)}1' file.txt
 ```
