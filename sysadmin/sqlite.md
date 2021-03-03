@@ -17,7 +17,7 @@ SELECT * from table;
 
 ### Column names
 ```
-PRAGMA table_info(table)
+PRAGMA table_info(table);
 ```
 
 ### Update value
